@@ -6,10 +6,18 @@ import org.springframework.context.ApplicationEvent;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.GenericApplicationContext;
 
+import com.hoanghiep.hustcare.controllers.LoginController;
+
 import javafx.application.Application;
 import javafx.application.HostServices;
 import javafx.application.Platform;
+import javafx.event.EventHandler;
+import javafx.geometry.Rectangle2D;
+import javafx.scene.Scene;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+import javafx.stage.WindowEvent;
 
 public class MainApp extends Application {
 
@@ -32,7 +40,26 @@ public class MainApp extends Application {
 
 	@Override
 	public void start(Stage stage) throws Exception {
-		this.applicationContext.publishEvent(new StageReadyEvent(stage));
+		//this.applicationContext.publishEvent(new StageReadyEvent(stage));
+		
+		LoginController login = new LoginController();
+        stage.setScene(new Scene(login));
+        Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
+        //set Stage boundaries to visible bounds of the main screen
+        stage.setX(primaryScreenBounds.getMinX());
+        stage.setY(primaryScreenBounds.getMinY());
+        stage.setWidth(primaryScreenBounds.getWidth());
+        stage.setHeight(primaryScreenBounds.getHeight());
+//        stage.initStyle(StageStyle.UNDECORATED);
+        stage.setTitle("Login in the system");
+//        stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+//            @Override
+//            public void handle(WindowEvent t) {
+//                Platform.exit();
+//                System.exit(0);
+//            }
+//        });
+        stage.show();
 	}
 	
 	@Override

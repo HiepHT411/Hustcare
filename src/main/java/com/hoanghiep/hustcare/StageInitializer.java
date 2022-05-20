@@ -6,19 +6,14 @@ import java.io.IOException;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationListener;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Component;
 
 import com.hoanghiep.hustcare.MainApp.StageReadyEvent;
-import com.hoanghiep.hustcare.controllers.ChartController;
-
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import lombok.extern.log4j.Log4j2;
-import net.rgielen.fxweaver.core.FxWeaver;
 
 @Log4j2
 @Component

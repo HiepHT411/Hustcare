@@ -1,6 +1,5 @@
 package com.hoanghiep.hustcare;
 
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import javafx.application.Application;
@@ -12,5 +11,5 @@ public class HustcareApplication {
 		//SpringApplication.run(HustcareApplication.class, args);
 		Application.launch(MainApp.class, args);
 	}
-
+	
 }
